@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const x = prompt("For Adding New Employee Enter 'add' :");
+        // if (x == "add"){
+        //     const y = prompt("Enter Employee Position : ");
+        // }
+            class person{
+                constructor(fname,money,sMood,hRate){
+                    this.fname = fname;
+                    this.money = money;
+                    this.sMood = sMood;
+                    this.hRate = hRate;
+                }
+                sleep(hours){
+                    if(hours == 7){
+                        this.sMood = 'Happy';
+                        //alert(this.sMood);
+                    }else if(hours < 7){
+                        this.sMood ='Tired';
+                        //alert(this.sMood);
+                    }else if(hours > 7){
+                        this.sMood = 'Lazy';
+                        //alert(this.sMood);
+                    }
+                    return console.log(this.sMood);
+                }
+                eat(meals){
+                    if(meals == 3){
+                        this.hRate = "100 health rate";
+                        //console.log(this.hRate);
+                    }else if(meals ==2 ){
+                        this.hRate = "75 health rate";
+                        //console.log(this.hRate);
+                    }else if(meals == 1){
+                        this.hRate = "50 health rate";
+                    }
+                    return console.log(this.hRate);
+                }
+                buy(items){
+                    if(items == 1){
+                        this.money = "decreases money by 10 LE";
+                    }
+                    return console.log(this.money);
+                }
+        }
+        
+        class Employee extends person{
+            #salary
+            constructor(fname,money,sMood,hRate,id, Email, WorkMood, isManger){
+                super(fname,money,sMood,hRate);
+                this.id = id;
+                this.Email = Email;
+                this.WorkMood = WorkMood;
+                this.isManger = isManger;
+                
+            }
+            work(wHours){
+                if(wHours == 8){
+                    this.WorkMood = "Happy";
+                }else if(wHours < 8){
+                    this.WorkMood = "Lazy";
+                }else if(wHours > 8){
+                    this.WorkMood = "Tired"
+                }
+                return console.log(this.WorkMood);
+
+            }
+            setSalary(amount){
+                if (amount >= 1000){
+                    this.#salary = amount;
+                }else if(amount < 1000){
+                    console.log("Invaild salary input");
+                }
+                return console.log(this.#salary);
+            }
+        }
+        const Earray = [];
+        class Office extends Employee{
+            constructor(Name, employee){
+                this.Name = Name;
+                this.employee = employee;
+            }
+            getAllemployees(){
+                for(let i=0;i<Earray.length;i++){
+                    let n = this.Earray[i].fname;
+                    let em =this.Earray[i].Email;
+                    console.log("employee name : "+n +" employee email : "+em);
+                }
+            
+            }
+            getEmployee(email){
+                for(let a=0;a<Earray.length;a++){
+                    if(email == Earray[a].Email){
+                        let emp =Earray[a];
+                    }else if(y == "mngr"){
+                    
+                    }
+                }
+                return console.log(emp);
+            }
+            fired(email){
+                for(let b=0;b<Earray.length;b++){
+                    if(Earray[b].Email == email){
+                        Earray[b].splice(email);
+                    }
+                }
+            }
+            hire(e1){
+                Earray[e1].push(e1);
+                
+            }
+        }
+        const e1 = new Employee("kareem","100"," "," ","25","kimo@gmail.com"," ","1000","yes");
+    
+        console.log(e1);
+        console.log(e1);
+        // e1.eat(2);
+        // e1.sleep(9);
+        // e1.work(11);
+        // e1.buy(1);
+        // e1.setSalary(200);
+        // console.log(e1.id);
+    
+    </script>
+</body>
+</html>
